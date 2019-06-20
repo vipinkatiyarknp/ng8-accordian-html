@@ -1,0 +1,30 @@
+<div class="onoffswitch">
+    <input type="checkbox" [(ngModel)]="expandCollapseAllStatus" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked (change)="changeExpandCollapseStatus()">
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<div class="card vipin-accordian-comp" *ngFor="let item of inputAccordianData;let i = index"
+  style="margin-bottom:20px;">
+  <span class="accordian-highlighter" *ngIf="inputAccordianConfig.showAccordianHighlighter"
+  [style.color]="inputAccordianConfig.accordianHighlighterFontColor"
+  [style.background]="inputAccordianConfig.accordianHighlighterBgColor">Release 1.11.0</span>
+  <div class="card-header" *ngIf="inputAccordianConfig.showHeader"
+    (click)="expandCollapse();item.expanded = !item.expanded"
+    [ngClass]="[item.expanded ? '':'remove-border']" [style.background]="inputAccordianConfig.headerBgColor"
+    [style.color]="inputAccordianConfig.headerFontColor">
+    <div [innerHTML]="item.heading"></div>
+    <i [ngClass]="[item.expanded ?'fa fa-angle-double-down right-arrow' : 'fa fa-angle-double-right right-arrow']"></i>
+  </div>
+  <div class="card-body" *ngIf="inputAccordianConfig.showBody && item.expanded"
+    [style.background]="inputAccordianConfig.bodyBgColor" [style.color]="inputAccordianConfig.bodyFontColor"
+    [ngClass]="[item.expanded ? 'add-border':'remove-border']">
+    <div [innerHTML]="item.description">
+    </div>
+  </div>
+  <div class="card-footer" *ngIf="inputAccordianConfig.showFooter && item.expanded"
+    [style.background]="inputAccordianConfig.footerBgColor" [style.color]="inputAccordianConfig.footerFontColor">
+    <div [innerHTML]="item.footer"></div>
+  </div>
+</div>
