@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component , ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   accordianConfig = {
@@ -22,25 +23,25 @@ export class AppComponent {
     accordianHighlighterFontColor: '#FFF'
   };
   accordianData = [{
-    heading: '<b>hello Vipin1</b>',
-    description: 'hello Vipin 1 Description',
-    footer: 'hello vipin Footer 1'
+    heading: '<b>Hello Vipin Heading 1 (Bold)</b>',
+    description: '<b>Hello Vipin 1 Description</b>',
+    footer: '<b>Hello Vipin Footer 1</b>'
   },
   {
-    heading: 'hello Vipin 2',
-    description: 'hello Vipin 2 Description',
-    footer: 'hello vipin Footer 2'
+    heading: '<i>Hello Vipin Heading 2 (italic)</i> ',
+    description: '<i>Hello Vipin 2 Description</i>',
+    footer: '<i>Hello Vipin Footer 2</i>'
   }, {
-    heading: 'hello Vipin 3',
-    description: 'hello Vipin 3 Description',
-    footer: 'hello vipin Footer 3'
+    heading: '<span style="font-size:20px">Hello Vipin Heading 3 (Font size 20px)</span>',
+    description: '<span style="font-size:20px">Hello Vipin 3 Description</span>',
+    footer: '<span style="font-size:20px">Hello Vipin Footer Heading 3</span>'
   }, {
-    heading: 'hello Vipin 4',
-    description: 'hello Vipin 4 Description',
-    footer: 'hello vipin Footer 4'
+    heading: 'Hello Vipin Heading 4  (With Icon) <i class="fa fa-user-circle" style="font-size:24px;"></i>',
+    description: 'Hello Vipin 4 Description (With Icon) <i class="fa fa-user-circle" style="font-size:24px;"></i>',
+    footer: 'Hello Vipin Footer 4 (With Icon) <i class="fa fa-user-circle" style="font-size:24px;"></i>'
   }, {
-    heading: 'hello Vipin 5',
-    description: 'hello Vipin 5 Description',
-    footer: 'hello vipin Footer 5'
+    heading: 'Hello Vipin Heading 5 ( Normal without HTML Tag )',
+    description: 'Hello Vipin 5 Description',
+    footer: 'Hello Vipin Footer 5'
   }];
 }

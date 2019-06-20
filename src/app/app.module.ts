@@ -6,10 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AccordianComponent } from './accordian/accordian.component';
 
+import {SafeHtmlPipe} from './accordian/accordian.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
-    AccordianComponent
+    AccordianComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

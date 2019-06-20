@@ -14,17 +14,17 @@
     (click)="expandCollapse();item.expanded = !item.expanded"
     [ngClass]="[item.expanded ? '':'remove-border']" [style.background]="inputAccordianConfig.headerBgColor"
     [style.color]="inputAccordianConfig.headerFontColor">
-    <div [innerHTML]="item.heading"></div>
+    <div [innerHTML]="item.heading | safeHtml"></div>
     <i [ngClass]="[item.expanded ?'fa fa-angle-double-down right-arrow' : 'fa fa-angle-double-right right-arrow']"></i>
   </div>
   <div class="card-body" *ngIf="inputAccordianConfig.showBody && item.expanded"
     [style.background]="inputAccordianConfig.bodyBgColor" [style.color]="inputAccordianConfig.bodyFontColor"
     [ngClass]="[item.expanded ? 'add-border':'remove-border']">
-    <div [innerHTML]="item.description">
+    <div [innerHTML]="item.description  | safeHtml">
     </div>
   </div>
   <div class="card-footer" *ngIf="inputAccordianConfig.showFooter && item.expanded"
     [style.background]="inputAccordianConfig.footerBgColor" [style.color]="inputAccordianConfig.footerFontColor">
-    <div [innerHTML]="item.footer"></div>
+    <div [innerHTML]="item.footer  | safeHtml"></div>
   </div>
 </div>
