@@ -37,14 +37,14 @@ export class AccordianComponent implements OnInit {
 
   }
   upadateUIAsPerConfig(config) {
-    if (config && config.collapse === 'ALL') {
+    if (config && config.expand === 'NONE') {
       const accordianData = this.inputAccordianData;
       this.inputAccordianData = accordianData.map(item => {
         item.expanded = false;
         return item;
       });
     }
-    if (config && config.collapse === 'FIRST') {
+    if (config && config.expand === 'FIRST') {
       const accordianData = this.inputAccordianData;
       this.inputAccordianData = accordianData.map((item, index) => {
         if (index === 0) {
@@ -55,7 +55,7 @@ export class AccordianComponent implements OnInit {
         return item;
       });
     }
-    if (config && config.collapse === 'NONE') {
+    if (config && config.expand === 'ALL') {
       const accordianData = this.inputAccordianData;
       this.inputAccordianData = accordianData.map((item, index) => {
         item.expanded = true;

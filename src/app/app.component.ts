@@ -17,7 +17,7 @@ export class AppComponent {
     bodyFontColor: '#333',
     footerBgColor: '#3A9DDE',
     footerFontColor: '#333',
-    collapse: 'FIRST', // ALL/NONE/FIRST
+    expand: 'FIRST', // ALL/NONE/FIRST
     showAccordianHighlighter: true,
     accordianHighlighterBgColor: '#50AF50',
     accordianHighlighterFontColor: '#FFF'
