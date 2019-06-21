@@ -37,31 +37,30 @@ export class AccordianComponent implements OnInit {
 
   }
   upadateUIAsPerConfig(config) {
-    if (config && config.expand === 'NONE') {
-      const accordianData = this.inputAccordianData;
-      this.inputAccordianData = accordianData.map(item => {
-        item.expanded = false;
-        return item;
-      });
-    }
-    if (config && config.expand === 'FIRST') {
-      const accordianData = this.inputAccordianData;
-      this.inputAccordianData = accordianData.map((item, index) => {
-        if (index === 0) {
-          item.expanded = true;
-        } else {
+    switch (config && config.expand) {
+      case 'NONE':
+        this.inputAccordianData = this.inputAccordianData.map(item => {
           item.expanded = false;
-        }
-        return item;
-      });
-    }
-    if (config && config.expand === 'ALL') {
-      const accordianData = this.inputAccordianData;
-      this.inputAccordianData = accordianData.map((item, index) => {
-        item.expanded = true;
-        return item;
-      });
-      this.expandCollapseAllStatus = true;
+          return item;
+        });
+        break;
+      case 'FIRST':
+        this.inputAccordianData = this.inputAccordianData.map((item, index) => {
+          if (index === 0) {
+            item.expanded = true;
+          } else {
+            item.expanded = false;
+          }
+          return item;
+        });
+        break;
+      case 'ALL':
+        this.inputAccordianData = this.inputAccordianData.map((item) => {
+          item.expanded = true;
+          return item;
+        });
+        this.expandCollapseAllStatus = true;
+        break;
     }
   }
   expandCollapse() {
